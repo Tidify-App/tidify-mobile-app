@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="29px" viewBox="0 0 23 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Account icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7.60597004,13.9111547 C5.44388198,12.5951238 4,10.2161803 4,7.5 C4,3.35786438 7.35786438,0 11.5,0 C15.6421356,0 19,3.35786438 19,7.5 C19,10.2161803 17.556118,12.5951238 15.39403,13.9111547 C19.8288666,16.0619024 23,21.7818122 23,28.5 C23,28.667299 22.9980335,28.8339789 22.9941299,29 L0.00587008176,29 C0.00196651255,28.8339789 0,28.667299 0,28.5 C0,21.7818122 3.17113339,16.0619024 7.60597004,13.9111547 Z" id="path-1"></path>
+        <filter x="-17.4%" y="-13.8%" width="143.5%" height="134.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.521568627   0 0 0 0 0.51372549   0 0 0 0 0.51372549  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Account-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Combined-Shape">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

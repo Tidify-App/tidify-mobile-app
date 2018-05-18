@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="132px" height="102px" viewBox="0 0 132 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#C32BFF" offset="0%"></stop>
+            <stop stop-color="#9013FE" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="32" cy="32" r="32"></circle>
+        <filter x="-97.7%" y="-75.8%" width="295.3%" height="295.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="2.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="12" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.48627451   0 0 0 0 0.478431373   0 0 0 0 0.478431373  0 0 0 0.240432518 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0564990942 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Startup-Hack" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-8---Profile" transform="translate(-121.000000, -565.000000)">
+            <g id="Group-4" transform="translate(0.000000, 587.000000)">
+                <g id="Group-3" transform="translate(155.000000, 0.000000)">
+                    <g id="Oval">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M35,29 L45.5882354,29 C46.3679314,29 47,29.6320686 47,30.4117646 L47,33.5882354 C47,34.3679314 46.3679314,35 45.5882354,35 L35,35 L35,45.5882354 C35,46.3679314 34.3679314,47 33.5882354,47 L30.4117646,47 C29.6320686,47 29,46.3679314 29,45.5882354 L29,35 L18.4117646,35 C17.6320686,35 17,34.3679314 17,33.5882354 L17,30.4117646 C17,29.6320686 17.6320686,29 18.4117646,29 L29,29 L29,18.4117646 C29,17.6320686 29.6320686,17 30.4117646,17 L33.5882354,17 C34.3679314,17 35,17.6320686 35,18.4117646 L35,29 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
