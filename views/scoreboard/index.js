@@ -17,6 +17,9 @@ const users = [
 
 
 export default class ScoreBoard extends React.Component {
+  componentDidMount() {
+    console.log('location', this.props.location.state)
+  }
   render() {
     const maxPoints = users.map(
       user => user.current_score

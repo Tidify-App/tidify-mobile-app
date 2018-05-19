@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Redirect } from 'react-router-native'
 import ChoreCard from '../components/chore-card/index';
 
 const chores = [
@@ -26,21 +27,57 @@ const chores = [
 ]
 
 export default class AddChoreView extends Component {
-  render() {
-    return(
-      <View style={styles.container}>
-        <Text style={styles.title}>Recently logged</Text>
-        {chores
-        .filter((chore) => chore.recentlyLogged)
-        .map((chore) => (
-          <ChoreCard style={styles.child} key={chore.name} {...chore}/>
-        ))}
-        <Text style={styles.title}>Chores</Text>
-        {chores.map((chore) => (
-          <ChoreCard style={styles.child} key={chore.name} {...chore}/>
-        ))}
-      </View>
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      shouldGoToLeaderBoard: false,
+      choreToAdd: {}
+    }
+  };
+  renderRecentlyLoggedChores() {
+    return (
+      chores
+      .filter((chore) => chore.recentlyLogged)
+      .map((chore) => (
+        <ChoreCard onPress={() => this.handleOnPress(chore)} style={styles.child} key={chore.name} {...chore}/>
+      ))
     );
+  };
+
+  renderAllChores() {
+    return (
+      chores.map((chore) => (
+        <ChoreCard onPress={() => this.handleOnPress(chore)} style={styles.child} key={chore.name} {...chore}/>
+      ))
+    );
+  }
+
+  handleOnPress = (choreToAdd) => {
+    this.setState({
+      shouldGoToLeaderBoard: true,
+      choreToAdd: choreToAdd,
+    });
+  }
+
+  render() {
+    if (this.state.shouldGoToLeaderBoard) {
+      return <Redirect push exact to={{
+        pathname: "/",
+        state: this.state.choreToAdd
+      }} />
+    } else {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.title}>Recently logged</Text>
+          { this.renderRecentlyLoggedChores() }
+          <Text style={styles.title}>Chores</Text>
+          { this.renderAllChores() }
+        </View>
+      )
+    }
+
+
   };
 };
 

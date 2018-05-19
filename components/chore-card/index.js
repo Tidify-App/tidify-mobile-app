@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default class ChoreCard extends PureComponent {
   render() {
     return(
-      <View style={styles.card}>
+      <TouchableOpacity onPress={this.props.onPress} style={styles.card}>
         <Text>{this.props.name}</Text>
         <Text>{this.props.value} points</Text>
-      </View>
+      </TouchableOpacity>
     );
   };
 };
