@@ -1,10 +1,13 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 export default class ChoreCard extends PureComponent {
   render() {
     return(
       <TouchableOpacity onPress={this.props.onPress} style={styles.card}>
+        <Image
+          source={this.props.image}
+          style={{height: 42, maxWidth: 42, marginBottom: 8}} />
         <Text style={styles.choreName}>{this.props.name}</Text>
         <Text style={styles.points}>{this.props.value} points</Text>
       </TouchableOpacity>
@@ -14,6 +17,8 @@ export default class ChoreCard extends PureComponent {
 
 const styles = StyleSheet.create({
   card: {
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
     padding: 10,
     margin: 4,

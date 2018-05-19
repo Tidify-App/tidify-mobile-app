@@ -6,24 +6,28 @@ import Searchbar from '../components/searchbar';
 
 const chores = [
   {
-    name: 'sweeping',
+    name: 'Sweeping',
     value: 75,
-    recentlyLogged: true
+    recentlyLogged: true,
+    image: require('../assets/pngs/broom.png')
   },
   {
-    name: 'vacuuming',
+    name: 'Vacuuming',
     value: 50,
-    recentlyLogged: false
+    recentlyLogged: false,
+    image: require('../assets/pngs/vacuum-cleaner.png')
   },
   {
-    name: 'dishwasher',
+    name: 'Dishwashing',
     value: 30,
-    recentlyLogged: false
+    recentlyLogged: false,
+    image: require('../assets/pngs/dishwasher.png')
   },
   {
-    name: 'laundry',
+    name: 'Laundry',
     value: 65,
-    recentlyLogged: false
+    recentlyLogged: false,
+    image: require('../assets/pngs/washing-machine.png')
   }
 ]
 
