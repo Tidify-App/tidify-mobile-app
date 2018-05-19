@@ -29,8 +29,15 @@ export default class AddChoreView extends Component {
   render() {
     return(
       <View style={styles.container}>
+        <Text style={styles.title}>Recently logged</Text>
+        {chores
+        .filter((chore) => chore.recentlyLogged)
+        .map((chore) => (
+          <ChoreCard style={styles.child} key={chore.name} {...chore}/>
+        ))}
+        <Text style={styles.title}>Chores</Text>
         {chores.map((chore) => (
-          <ChoreCard key={chore.name} {...chore}/>
+          <ChoreCard style={styles.child} key={chore.name} {...chore}/>
         ))}
       </View>
     );
@@ -40,8 +47,15 @@ export default class AddChoreView extends Component {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
+  child: {
+    flex: 1,
+    flexBasis: '33%',
+    flexGrow: 0,
+  },
+  title: {
+    width: '100%'
+  }
 });

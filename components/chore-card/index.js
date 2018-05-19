@@ -14,9 +14,13 @@ export default class ChoreCard extends PureComponent {
 
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
-    flexBasis: '33%',
     backgroundColor: '#fff',
-    borderColor: 'red'
+    borderColor: 'red',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    padding: 10,
+    margin: 7,
+    width: 107,
+    height: 107,
   },
 });
