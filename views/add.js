@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Redirect } from 'react-router-native'
 import ChoreCard from '../components/chore-card/index';
+import Searchbar from '../components/searchbar';
 
 const chores = [
   {
@@ -69,9 +70,10 @@ export default class AddChoreView extends Component {
     } else {
       return (
         <View style={styles.container}>
-          <Text style={styles.title}>Recently logged</Text>
+          <Searchbar />
+          <Text style={styles.title}>{'Recently logged'.toUpperCase()}</Text>
           { this.renderRecentlyLoggedChores() }
-          <Text style={styles.title}>Chores</Text>
+          <Text style={styles.title}>{'Chores'.toUpperCase()}</Text>
           { this.renderAllChores() }
         </View>
       )
@@ -84,15 +86,22 @@ export default class AddChoreView extends Component {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    paddingLeft: 12,
+    paddingRight: 12,
   },
   child: {
     flex: 1,
-    flexBasis: '33%',
+    flexBasis: '25%',
     flexGrow: 0,
   },
   title: {
-    width: '100%'
+    width: '100%',
+    margin: 5,
+    fontSize: 16,
+    color: '#666',
+    fontWeight: '600',
   }
 });
