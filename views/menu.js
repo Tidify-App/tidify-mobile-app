@@ -1,9 +1,9 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Link } from 'react-router-native';
 import NavButton from '../components/menu/nav-button'
 
-export default class Menu extends PureComponent {
+export default class Menu extends Component {
   render() {
     
     return (

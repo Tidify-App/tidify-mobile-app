@@ -78,8 +78,6 @@ export default class AddChoreView extends Component {
         </View>
       )
     }
-
-
   };
 };
 
