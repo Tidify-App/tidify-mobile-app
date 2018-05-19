@@ -15,8 +15,50 @@ const users = [
     }
 ]
 
+// const postChore = (chore) => {
+//   fetch('/activities?sessionid=1', )
+// }
+
+const postChore = (chore) => {
+  const data = {
+    activity: {
+      user_id: 1,
+        task: {
+          name: chore.name,
+            codename: chore.name,
+            points: chore.value
+       }
+    }
+  };
+
+  fetch('http://192.168.1.137:3000/activities?sessionid=1', {
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    }),
+    body: JSON.stringify(data),
+    method: 'POST'
+  })
+  .then(response => response.json()) // JSON from `response.json()` call
+  .then(response => console.log('response', response));
+};
+
+// function postData(url, data) {
+//   return fetch(url, {
+//     header: {
+//       'content-type': 'application/json'
+//     },
+//     body: JSON.stringify(data),
+//     method: 'POST'
+//   })
+// };
 
 export default class ScoreBoard extends React.Component {
+  componentDidMount() {
+    if(this.props.location.state) {
+      postChore(this.props.location.state)
+    }
+  }
+
   render() {
     const maxPoints = users.map(
       user => user.current_score
