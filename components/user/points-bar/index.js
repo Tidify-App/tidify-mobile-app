@@ -11,7 +11,7 @@ export default class PointsBar extends React.Component {
             width: points/maxPoints*100 + '%',
             height: 30,
             backgroundColor: color,
-            borderRadius: 10,
+            borderRadius: 15,
             display: 'flex',
             justifyContent: 'center',
         }}>

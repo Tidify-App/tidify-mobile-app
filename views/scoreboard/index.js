@@ -1,17 +1,17 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import UsersScores from '../../components/user/users-scores/index';
 
 const users = [
     {
         image: 'https://gymkhana.iitb.ac.in/~sports/images/profile.png',
         current_score: 300,
-        color: 'green'
+        color: '#43DE77'
     },
     {
         image: 'https://gymkhana.iitb.ac.in/~sports/images/profile.png',
         current_score: 250,
-        color: 'blue'
+        color: '#F55485'
     }
 ]
 
@@ -28,6 +28,8 @@ export default class ScoreBoard extends React.Component {
     )
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>Tidify</Text>
+        <Text style={styles.room}>Jirholm's residence</Text>
         <UsersScores users={users} maxPoints={maxPoints}/>
       </View>
     );
@@ -41,4 +43,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontSize: 34,
+    fontFamily: 'Helvetica Neue',
+    color: '#9013FE',
+  },
+  room: {
+    fontSize: 20,
+    color: '#999'
+  }
 });
