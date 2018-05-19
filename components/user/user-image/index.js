@@ -7,7 +7,11 @@ export default class UserImage extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          style={{width: 50, height: 50}}
+          style={{
+            width: 64,
+            height: 64,
+            borderRadius: 32
+          }}
           source={{uri: source}}
         />
       </View>
@@ -17,10 +21,10 @@ export default class UserImage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '50%'
-  },
+    width: 90,
+    height: 90,
+  }
 });

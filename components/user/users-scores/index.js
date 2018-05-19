@@ -1,25 +1,14 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { UserDisplay } from '../user-display/index';
-
-const users = [
-    {
-        image: '',
-        current_score: 300,
-        color: 'green'
-    },
-    {
-        image: '',
-        current_score: 250,
-        color: 'blue'
-    }
-]
+import UserDisplay from '../user-display/index';
 
 
-export default class PointsBar extends React.Component {
+export default class UsersScores extends React.Component {
   render() {
-    const { maxPoints, points, color } = this.props;
-    const userList = users.map(user => <UserDisplay user={user} />);
+    const { maxPoints, users } = this.props;
+    const userList = users.map(
+        (user, index) => <UserDisplay key={index} user={user} maxPoints={maxPoints} />
+    );
     return (
       <View style={styles.container}>
         {userList}
@@ -30,9 +19,8 @@ export default class PointsBar extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    width: '100%',
+    alignItems: 'flex-start',
     justifyContent: 'center',
   },
 });

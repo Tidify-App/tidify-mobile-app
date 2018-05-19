@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { UserImage } from '../user-image/index';
-import { PointsBar } from '../points-bar/index';
+import UserImage from '../user-image/index';
+import PointsBar from '../points-bar/index';
 
 export default class UserDisplay extends React.Component {
   render() {
-    const { user } = this.props;
+    const { user, maxPoints } = this.props;
     return (
       <View style={styles.container}>
         <UserImage source={user.image} />
         <PointsBar
-          maxPoints={400}
+          maxPoints={maxPoints}
           points={user.current_score}
           color={user.color}
         />
@@ -21,9 +21,11 @@ export default class UserDisplay extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: '100%',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row',
+    height: 90,
   },
 });

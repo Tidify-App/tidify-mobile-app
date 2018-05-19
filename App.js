@@ -3,10 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NativeRouter, Route, Link, Switch, LayoutAnimation } from 'react-router-native'
 import Menu from './views/menu';
 import AddChoreView from './views/add';
-
-const Hej = () => (
-  <Text>Hej</Text>
-);
+import ScoreBoard from './views/scoreboard/index';
 
 const Hello = () => (
   <Text>Hello</Text>
@@ -19,7 +16,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <View style={styles.content}>
             <Switch>
-              <Route exact path={'/'} component={Hej}/>
+              <Route exact path={'/'} component={ScoreBoard}/>
               <Route exact path={'/add'} component={AddChoreView}/>
               <Route exact path={'/profile'} component={Hello}/>
             </Switch>

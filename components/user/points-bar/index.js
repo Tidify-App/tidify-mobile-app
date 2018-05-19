@@ -9,10 +9,13 @@ export default class PointsBar extends React.Component {
       <View style={styles.container}>
         <View style={{
             width: points/maxPoints*100 + '%',
+            height: 30,
             backgroundColor: color,
-            borderRadius: '50%'
+            borderRadius: 10,
+            display: 'flex',
+            justifyContent: 'center',
         }}>
-          <Text>{points}</Text>
+          <Text style={styles.score}>{points}</Text>
         </View>
       </View>
     );
@@ -23,7 +26,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
+    paddingRight: 20,
   },
+  score: {
+    color: '#FEFEFE',
+    textAlign: 'right',
+    marginRight: 15,
+  }
 });
