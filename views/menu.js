@@ -2,15 +2,18 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Link } from 'react-router-native';
 import NavButton from '../components/menu/nav-button'
+import scoreIcon from '../assets/pngs/scores.png';
+import addButton from '../assets/pngs/add-button.png';
+import profileIcon from '../assets/pngs/profile.png';
 
 export default class Menu extends Component {
   render() {
     
     return (
       <View style={styles.container}>
-        <NavButton to={'/'} title='Scores'/>
-        <NavButton to={'/add'} title='Add Chore'/>
-        <NavButton to={'/profile'} title='Profile'/>
+        <NavButton to={'/'} title='Scores' icon={scoreIcon}/>
+        <NavButton to={'/add'} icon={addButton}/>
+        <NavButton to={'/profile'} title='Profile' icon={profileIcon}/>
       </View>
     );
   }
