@@ -11,6 +11,10 @@ const Hello = () => (
   <Text>Hello</Text>
 );
 
+const Hey = () => (
+  <Text>Hey</Text>
+);
+
 export default class App extends React.Component {
   render() {
     return (
@@ -24,6 +28,7 @@ export default class App extends React.Component {
             <Switch>
               <Route exact path={'/'} component={Hej}/>
               <Route exact path={'/add'} component={Hello}/>
+              <Route exact path={'/profile'} component={Hey}/>
             </Switch>
           </View>
 

@@ -12,6 +12,9 @@ export default class Menu extends PureComponent {
         <Link to={'/add'}>
           <Text>Add Chore</Text>
         </Link>
+        <Link to={'/profile'}>
+          <Text>View Profile</Text>
+        </Link>
       </View>
     );
   }
