@@ -17,6 +17,8 @@ const users = [
     }
 ]
 
+const addColor = userList => userList.map((user, index) => ({...user, color: users[index].color, image: users[index].image}));
+
 // const postChore = (chore) => {
 //   fetch('/activities?sessionid=1', )
 // }
@@ -52,7 +54,6 @@ function getLeaderboardData() {
     method: 'GET'
   })
   .then(response => response.json())
-  .then(data => console.log(data))
   .catch(error => console.log('error', error))  
 }
 
@@ -67,12 +68,25 @@ function getLeaderboardData() {
 // };
 
 export default class ScoreBoard extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      users: []
+    }
+  }
   componentWillMount() {
-    const leaderBoardData = getLeaderboardData().then(data => data);
-    console.log('leaderBoardData', leaderBoardData);
-    this.setState({
-      users: leaderBoardData.users
-    })
+    
+    getLeaderboardData().then(
+      data => {
+        console.log(data)
+        if (data !== undefined) {
+          this.setState({
+            users: data.users
+          });
+        }
+        
+  })
+    
   }
   componentDidMount() {
     if(this.props.location.state) {
@@ -81,7 +95,8 @@ export default class ScoreBoard extends React.Component {
   }
 
   render() {
-    console.log('this.state.users', this.state.users);
+    let { users } = this.state;
+    users = addColor(users);
     const maxPoints = users.map(
       user => user.current_score
     ).reduce(
