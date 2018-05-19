@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import UsersScores from '../../components/user/users-scores/index';
 
+const baseUrl = 'http://172.20.10.2:3000';
+
 const users = [
     {
         image: require('../../assets/user-images/anton.jpg'),
@@ -31,7 +33,7 @@ const postChore = (chore) => {
     }
   };
 
-  fetch('http://192.168.1.137:3000/activities?sessionid=1', {
+  fetch(baseUrl + '/activities?sessionid=1', {
     headers: new Headers({
       'Content-Type': 'application/json'
     }),
@@ -41,6 +43,18 @@ const postChore = (chore) => {
   .then(response => response.json()) // JSON from `response.json()` call
   .then(response => console.log('response', response));
 };
+
+function getLeaderboardData() {
+  return fetch(baseUrl + '/scoreboard?sessionid=1', {
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    }),
+    method: 'GET'
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log('error', error))  
+}
 
 // function postData(url, data) {
 //   return fetch(url, {
@@ -53,6 +67,13 @@ const postChore = (chore) => {
 // };
 
 export default class ScoreBoard extends React.Component {
+  componentWillMount() {
+    const leaderBoardData = getLeaderboardData().then(data => data);
+    console.log('leaderBoardData', leaderBoardData);
+    this.setState({
+      users: leaderBoardData.users
+    })
+  }
   componentDidMount() {
     if(this.props.location.state) {
       postChore(this.props.location.state)
@@ -60,6 +81,7 @@ export default class ScoreBoard extends React.Component {
   }
 
   render() {
+    console.log('this.state.users', this.state.users);
     const maxPoints = users.map(
       user => user.current_score
     ).reduce(
