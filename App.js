@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
   content: {
     width: '100%',
     flex: 6,
-    justifyContent: 'center',
+    marginTop: 30,
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
 });

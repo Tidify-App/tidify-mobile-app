@@ -12,7 +12,7 @@ export default class UserImage extends React.Component {
             height: 64,
             borderRadius: 32
           }}
-          source={{uri: source}}
+          source={source}
         />
       </View>
     );

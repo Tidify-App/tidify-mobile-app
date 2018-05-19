@@ -4,12 +4,12 @@ import UsersScores from '../../components/user/users-scores/index';
 
 const users = [
     {
-        image: 'https://gymkhana.iitb.ac.in/~sports/images/profile.png',
+        image: require('../../assets/user-images/anton.jpg'),
         current_score: 300,
         color: '#43DE77'
     },
     {
-        image: 'https://gymkhana.iitb.ac.in/~sports/images/profile.png',
+        image: require('../../assets/user-images/sara.jpg'),
         current_score: 250,
         color: '#F55485'
     }
@@ -17,9 +17,6 @@ const users = [
 
 
 export default class ScoreBoard extends React.Component {
-  componentDidMount() {
-    console.log('location', this.props.location.state)
-  }
   render() {
     const maxPoints = users.map(
       user => user.current_score
